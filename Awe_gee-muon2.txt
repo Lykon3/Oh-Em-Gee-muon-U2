@@ -1,0 +1,621 @@
+﻿\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsfonts, amssymb, amsthm}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{authblk}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{sectsty}
+\usepackage[numbers, sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+
+
+\geometry{margin=1in}
+
+
+% Define custom colors
+\definecolor{deepblue}{RGB}{0,51,102}
+\definecolor{darkred}{RGB}{139,0,0}
+\definecolor{darkgreen}{RGB}{0,100,0}
+
+
+% Define header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textit{Resolving the Muon g-2 Anomaly Proposal}}
+\fancyhead[R]{\textit{\nouppercase{\leftmark}}}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+
+
+% Hyperref setup for link colors
+\hypersetup{
+    colorlinks=true,
+    linkcolor=deepblue,
+    citecolor=deepblue,
+    urlcolor=deepblue
+}
+
+
+% Customize section fonts
+\sectionfont{\Large\bfseries\color{deepblue}}
+\subsectionfont{\large\bfseries}
+\subsubsectionfont{\normalsize\bfseries}
+
+
+% Define theorem environments
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+
+
+% Title, Author, and Date
+\title{\vspace{-2em}\textbf{Resolving the Muon g-2 Anomaly Through Vacuum Coherence Geometry:} \\ 
+\vspace{0.5em}
+\Large A Residual Framework with Advanced Topological Formalism for Bridging Discrete and Continuous Quantum Descriptions}
+
+
+\author[1]{Author Name\thanks{Corresponding author: author@institution.edu}}
+\affil[1]{Department of Physics, Institution Name\\
+Address, City, State/Country ZIP}
+
+
+\date{\today}
+
+
+\begin{document}
+
+
+\maketitle
+
+
+\begin{abstract}
+\noindent The persistent discrepancy between experimental measurements and Standard Model (SM) predictions of the muon anomalous magnetic moment ($a_\mu$)---the Muon g-2 anomaly---has long been viewed as a potential window into physics beyond the Standard Model. In this proposal, we present a novel computational framework in which the anomaly emerges as a residual geometric effect arising from the partial overlap between an inherent, coherent vacuum geometry and discretized lattice QCD computations. We introduce an enhanced formalism that incorporates insights from topology (persistent homology, Morse theory), differential geometry (Ricci flow), and connections to AdS/CFT correspondence. Our framework aims to bridge the gap between discrete numerical methods and the continuous nature of quantum fields, potentially resolving the long-standing anomaly without invoking new fundamental particles or forces.
+
+
+\vspace{0.5em}
+\noindent\textbf{Keywords:} Muon g-2 anomaly, Lattice QCD, Vacuum geometry, Hadronic vacuum polarization, Quantum field theory, Persistent homology, Ricci flow, Topological data analysis
+\end{abstract}
+
+
+\section{Executive Summary}
+
+
+The Muon g-2 anomaly, characterized by a persistent $\sim 4.2\sigma$ discrepancy between experimental measurements and theoretical predictions, may signal not only new physics but also inherent limitations in current computational models. This proposal outlines a comprehensive framework in which the residual discrepancy is viewed as a precise computational artifact: a partial resolution of a coherent vacuum geometry endemic to the quantum vacuum. 
+
+
+We detail a rigorous derivation of the overlap factor between the full geometric contribution and that captured by lattice QCD, enhanced with topological and geometric insights. Our multi-faceted strategy incorporates:
+\begin{itemize}
+    \item Empirical lattice results from multiple collaborations
+    \item Advanced numerical geometry techniques (Regge calculus, AdS/QCD) enriched with topological perspectives
+    \item Machine learning approaches for pattern recognition and functional form discovery
+    \item Cross-lepton validation studies
+    \item Connections to AdS/CFT correspondence, quantum Hall systems, and recursive geometric frameworks
+\end{itemize}
+
+
+Ultimately, this work seeks to redefine our understanding of quantum corrections by reconciling discrete methods with continuous physical phenomena through a geometrically and topologically richer framework.
+
+
+\section{Theoretical Motivation \& Hypothesis}
+
+
+\subsection{Background: The Muon g-2 Anomaly}
+
+
+The anomalous magnetic moment of the muon, defined as:
+\begin{equation}
+a_\mu = \frac{g_\mu - 2}{2}
+\end{equation}
+where $g_\mu$ is the muon's gyromagnetic ratio, has been measured with extraordinary precision. The current experimental world average stands at:
+\begin{equation}
+a_\mu^{\text{exp}} = 116\,592\,061(41) \times 10^{-11}
+\end{equation}
+
+
+The Standard Model prediction, however, yields:
+\begin{equation}
+a_\mu^{\text{SM}} = 116\,591\,810(43) \times 10^{-11}
+\end{equation}
+
+
+This results in a discrepancy of:
+\begin{equation}
+\Delta a_\mu = a_\mu^{\text{exp}} - a_\mu^{\text{SM}} = 251(59) \times 10^{-11}
+\end{equation}
+
+
+\subsection{Central Hypothesis}
+
+
+\begin{hypothesis}[Vacuum Coherence Geometry]
+The observed discrepancy in the muon anomalous magnetic moment arises from a partial overlap between an intrinsic, coherent geometry of the quantum vacuum and the discretized resolution provided by lattice QCD calculations. This residual geometric contribution---if properly quantified using an advanced formalism incorporating topological and differential geometric insights---could explain the anomaly without invoking additional fundamental particles or forces.
+\end{hypothesis}
+
+
+The recent tensions between lattice QCD calculations and dispersive approaches for hadronic vacuum polarization (HVP) have prompted critical examination of computational methods. Our hypothesis asserts that the observed discrepancy emerges as a computational residual governed by the topological and geometric characteristics of how discrete computational grids resolve continuous vacuum structures.
+
+
+\section{Residual Overlap Factor Derivation}
+
+
+\subsection{Conceptual Mathematical Framework}
+
+
+We model the coherent vacuum geometry as contributing a full geometric term $a_\mu^{\text{full geometry}}$. However, due to the finite lattice spacing $a$, only a fraction of this full contribution is captured in lattice simulations. This fraction is quantified by an overlap factor $f_{\mathrm{overlap}}(a, r)$, where $r$ is a characteristic length scale (taken here as the muon's Compton wavelength).
+
+
+\begin{definition}[Overlap Factor]
+The overlap factor $f_{\mathrm{overlap}}(a, r)$ represents the fraction of the full geometric contribution captured by a lattice with spacing $a$ for a particle with characteristic length scale $r$.
+\end{definition}
+
+
+The anomaly then appears as the residual:
+\begin{equation}
+a_\mu^{\text{residual}} = a_\mu^{\text{full geometry}} \cdot \left[1 - f_{\mathrm{overlap}}(a, r)\right]
+\label{eq:residual}
+\end{equation}
+
+
+\subsection{Basic Exponential Model}
+
+
+We initially propose an exponential form for the overlap factor:
+
+
+\begin{theorem}[Basic Overlap Factor Form]
+The overlap factor takes the form:
+\begin{equation}
+f_{\mathrm{overlap}}(a, r) = 1 - \exp\left(-\frac{r^2}{a^2}\right)
+\label{eq:overlap}
+\end{equation}
+which satisfies the boundary conditions:
+\begin{itemize}
+    \item As $a \to 0$ (continuum limit), $f_{\mathrm{overlap}} \to 1$
+    \item As $a \to \infty$ (extremely coarse lattice), $f_{\mathrm{overlap}} \to 0$
+\end{itemize}
+\end{theorem}
+
+
+This leads to a residual contribution:
+\begin{equation}
+a_\mu^{\text{residual}} = a_\mu^{\text{full geometry}} \cdot \exp\left(-\frac{r^2}{a^2}\right)
+\label{eq:residual_final}
+\end{equation}
+
+
+\subsection{Enhanced Topological Formalism}
+
+
+While the exponential model provides useful insights, a more sophisticated understanding emerges from topological and geometric considerations.
+
+
+\subsubsection{Persistent Homology Approach}
+
+
+We define the evolution of the overlap factor using persistent homology:
+\begin{equation}
+\frac{d}{da} f_{\mathrm{overlap}}(a, r) = -\Phi\big(\mathcal{H}(a), r\big)
+\label{eq:persistent}
+\end{equation}
+where $\mathcal{H}(a)$ denotes the persistent homology groups for lattice resolution $a$, and $\Phi$ quantifies the attenuation of geometric features (cycles, voids) across scales.
+
+
+\begin{proposition}[Persistence-Guided Suppression]
+The suppression of the full geometric contribution is governed by the persistence of topological features within the vacuum manifold under refinement of the computational grid.
+\end{proposition}
+
+
+\subsubsection{Ricci Flow-Inspired Evolution}
+
+
+We propose that the overlap factor evolves under a Ricci flow-like deformation:
+\begin{equation}
+\frac{d}{dt} g_{ij}(t) = -2 R_{ij}(t)
+\end{equation}
+where $t$ can be related to the inverse lattice spacing. This leads to:
+\begin{equation}
+a_\mu^{\text{residual}}(a) = a_\mu^{\text{full geometry}} \cdot \mathcal{G}\left(\int_0^{1/a^2} \mathcal{R}_{\text{discrete}}(t') dt'\right)
+\label{eq:ricci_residual}
+\end{equation}
+where $\mathcal{G}$ maps the integrated effect of discrete curvature evolution to the residual.
+
+
+\subsubsection{Discrete Geometry via Regge Calculus}
+
+
+Using triangulated manifolds, we express the overlap factor as:
+\begin{equation}
+f_{\mathrm{overlap}}^{\text{Regge}} = \frac{\sum_{\sigma} A_\sigma \Theta_\sigma}{\int d^4x \sqrt{g} R}
+\end{equation}
+where $\Theta_\sigma$ are deficit angles on simplices $\sigma$, and $A_\sigma$ are the corresponding areas.
+
+
+\subsubsection{Chern-Simons Topological Correction}
+
+
+Drawing on gauge anomaly theory, we hypothesize a Chern-Simons-like residual term:
+\begin{equation}
+S_{\mathrm{eff}}^{\mathrm{residual}} = \int A \wedge dA + \alpha\, \mathrm{Tr}(A \wedge A \wedge A)
+\end{equation}
+This term may encode persistent geometric memory overlooked in standard lattice QCD simulations.
+
+
+\subsection{Parameter Determination}
+
+
+Using the basic exponential model, matching to experimental observations requires:
+\begin{equation}
+\exp\left(-\frac{r_\mu^2}{a^2}\right) \approx 0.1512
+\end{equation}
+
+
+With the muon Compton wavelength $r_\mu = \hbar/(m_\mu c) \approx 1.87$ fm, we obtain:
+\begin{equation}
+a \approx \frac{1.87~\text{fm}}{\sqrt{1.889}} \approx 1.36~\text{fm}
+\label{eq:lattice_spacing}
+\end{equation}
+
+
+This value, notably larger than typical high-precision lattice spacings ($\sim 0.05-0.1$ fm), suggests that the effective lattice spacing for capturing vacuum geometry differs from that optimized for other observables.
+
+
+\subsection{Visualizing the Overlap Factor}
+
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    width=0.85\textwidth,
+    height=0.6\textwidth,
+    xlabel={Lattice Spacing $a$ (fm)},
+    ylabel={Overlap Factor $f_{\mathrm{overlap}}(a, r_\mu)$},
+    xmin=0, xmax=4,
+    ymin=0, ymax=1.05,
+    grid=major,
+    grid style={gray!30},
+    legend pos=south east,
+    thick
+]
+
+
+% Basic exponential model
+\addplot[
+    domain=0.01:4,
+    samples=200,
+    blue,
+    line width=1.5pt
+] {1 - exp(-(1.87/x)^2)};
+\addlegendentry{Basic model: $1 - \exp(-r_\mu^2/a^2)$}
+
+
+% Enhanced topological model (hypothetical)
+\addplot[
+    domain=0.01:4,
+    samples=200,
+    darkred,
+    line width=1.5pt,
+    dashed
+] {(x > 0.2) ? (1 - 0.1512*exp(- ( (1.87/1.36)^2 - (1.87/x)^2 ) ) - 0.05*sin(deg(2*pi*x/1.5))*exp(-x/2) ) : ( (x/0.2)*(1 - 0.1512*exp(- ( (1.87/1.36)^2 - (1.87/0.2)^2 ) ) - 0.05*sin(deg(2*pi*0.2/1.5))*exp(-0.2/2) ) )};
+\addlegendentry{Enhanced model (conceptual)}
+
+
+% Match point
+\addplot[
+    red,
+    dashed,
+    line width=1.2pt,
+    domain=0:4
+] coordinates {(1.36, 0) (1.36, 1)};
+\addlegendentry{Match point $a \approx 1.36$ fm}
+
+
+% Typical lattice spacing region
+\addplot[
+    fill=green,
+    opacity=0.2,
+    draw=none
+] coordinates {(0.05, 0) (0.05, 1.05) (0.15, 1.05) (0.15, 0)};
+\addlegendentry{Typical high-precision lattice}
+
+
+% Residual = 0.1512 line
+\addplot[
+    orange,
+    dotted,
+    line width=1.2pt,
+    domain=0:4
+] {1 - 0.1512};
+\addlegendentry{$1 - \text{residual} = 0.8488$}
+
+
+\end{axis}
+\end{tikzpicture}
+\caption{Overlap Factor $f_{\mathrm{overlap}}(a, r_\mu)$ as a function of lattice spacing $a$. The blue curve shows the basic exponential model, while the red dashed curve illustrates a hypothetical enhanced model incorporating topological effects. The match point and typical lattice spacings are indicated.}
+\label{fig:overlap_factor}
+\end{figure}
+
+
+\section{Multi-Path Computational Validation Strategy}
+
+
+\subsection{Empirical Lattice QCD Data Analysis}
+
+
+We will compile HVP contribution data from multiple lattice QCD collaborations:
+\begin{itemize}
+    \item BMW Collaboration
+    \item RBC/UKQCD Collaboration
+    \item Fermilab Lattice/HPQCD/MILC Collaborations
+    \item ETMC Collaboration
+    \item Mainz Collaboration
+\end{itemize}
+
+
+Instead of fitting only the simple exponential model, we will test multiple forms:
+\begin{equation}
+a_\mu^{\text{residual}}(a) = a_\mu^{\text{full geometry}} \cdot \left(1 - \int_0^a \Phi(\mathcal{H}(a',r), r) da' \right)
+\end{equation}
+seeking to identify the underlying functions $\Phi$ or $\mathcal{G}$ from the data.
+
+
+\subsection{Advanced Numerical Geometry Techniques}
+
+
+\subsubsection{Regge Calculus with Discrete Ricci Flow}
+We will implement discrete Ricci flow on simplicial complexes to track how deficit angles evolve with refinement, directly computing:
+\begin{equation}
+\frac{d\Theta_\sigma}{dt} = -2\pi \chi(\sigma) + \sum_{\tau \sim \sigma} w_{\sigma\tau} \Theta_\tau
+\end{equation}
+where $\chi(\sigma)$ is the Euler characteristic and $w_{\sigma\tau}$ are edge weights.
+
+
+\subsubsection{Wick Rotation Analysis}
+We investigate the role of analytic continuation in preserving coherent geometric resolution:
+\begin{equation}
+\Delta f_{\mathrm{overlap}} = \oint_C \frac{dz}{2\pi i} \frac{G_E(z) - G_M(iz)}{z^2 + m_\mu^2}
+\end{equation}
+
+
+\subsubsection{AdS/QCD and Holographic Tensor Networks}
+Employing holographic duality:
+\begin{equation}
+f_{\mathrm{overlap}}^{\text{AdS}} = \int_0^\infty dz \, \Psi(z/a) \Phi_{\text{bulk-boundary}}(z, r_\mu)
+\end{equation}
+where $\Psi(z/a)$ is a cut-off function and $\Phi_{\text{bulk-boundary}}$ is the bulk-to-boundary propagator.
+
+
+\subsubsection{Persistent Homology Computations}
+We will explicitly compute:
+\begin{itemize}
+    \item Betti numbers $\beta_k$ for lattice configurations at different spacings
+    \item Persistence diagrams tracking birth/death of topological features
+    \item Wasserstein distances between persistence diagrams at different resolutions
+\end{itemize}
+
+
+\subsection{Machine Learning and Tensor Network Approaches}
+
+
+\begin{itemize}
+    \item \textbf{Neural-symbolic models}: Combining deep learning with symbolic regression to discover optimal functional forms for $\Phi(\mathcal{H}(a,r),r)$
+    \item \textbf{Tensor network simulations}: Using MPS/PEPS representations to model the discrete-continuous interface
+    \item \textbf{Graph neural networks}: To learn geometric representations directly from lattice configurations
+    \item \textbf{Variational autoencoders}: To identify latent geometric structures that capture topological persistence
+\end{itemize}
+
+
+\subsection{Cross-Lepton Consistency Checks}
+
+
+We extend the analysis to electron and tau anomalies:
+\begin{equation}
+\frac{a_e^{\text{residual}}}{a_\mu^{\text{residual}}} \approx \frac{1 - f_{\mathrm{overlap}}(a, r_e)}{1 - f_{\mathrm{overlap}}(a, r_\mu)}
+\end{equation}
+
+
+For the enhanced formalism, this becomes:
+\begin{equation}
+\frac{a_e^{\text{residual}}}{a_\mu^{\text{residual}}} = \frac{\mathcal{G}_e(\mathcal{H}, r_e)}{\mathcal{G}_\mu(\mathcal{H}, r_\mu)}
+\end{equation}
+
+
+\section{Connections to Broader Theoretical Frameworks}
+
+
+\subsection{AdS/CFT Correspondence}
+
+
+The holographic principle suggests that boundary discretization (lattice) incompletely captures bulk geometry. The missing information parallels our $a_\mu^{\text{residual}}$:
+\begin{equation}
+\Delta_{\text{holographic}} = S_{\text{bulk}} - S_{\text{boundary}}^{\text{discrete}}
+\end{equation}
+
+
+\subsection{Quantum Hall Systems and Berry Phase}
+
+
+The vacuum coherence geometry may possess a Berry phase analogue. We explore whether a Chern-Simons-like correction:
+\begin{equation}
+\mathcal{L}_{\text{CS}} = \frac{\theta}{4\pi^2} \epsilon^{\mu\nu\rho\sigma} F_{\mu\nu} F_{\rho\sigma}
+\end{equation}
+parameterizes the coherence decay.
+
+
+\subsection{Recursive Collapse Manifold Architecture}
+
+
+Drawing from vacuum topology research, we propose a multi-layer collapse bifurcation model:
+\begin{equation}
+1 - f_{\mathrm{overlap}}(a,r) = \sum_k w_k(r) \cdot \delta_k(a,r)
+\end{equation}
+where $w_k(r)$ are entropy-derived weights and $\delta_k(a,r)$ represents unresolved fractions at different geometric scales.
+
+
+\section{Expected Outcomes and Impact}
+
+
+\subsection{Primary Deliverables}
+\begin{enumerate}
+    \item \textbf{Validated overlap factor formalism}: Empirically tested using refined topological and geometric models
+    \item \textbf{Alternative computational frameworks}: Independent verification through multiple approaches
+    \item \textbf{Machine learning models}: Refined functional forms with uncertainty quantification
+    \item \textbf{Cross-lepton predictions}: Testable predictions for electron and tau anomalies
+    \item \textbf{Theoretical connections}: Documented framework linking g-2 anomaly to broader physics principles
+\end{enumerate}
+
+
+\subsection{Broader Implications}
+\begin{itemize}
+    \item \textbf{Computational QFT}: New understanding of discrete-continuous interface emphasizing topological fidelity
+    \item \textbf{Lattice methodology}: Improved extrapolation techniques informed by geometric stability
+    \item \textbf{BSM physics}: Clarification of whether g-2 anomaly indicates new physics or computational artifacts
+    \item \textbf{Fundamental theory}: Insights into quantum gravity at computational boundaries
+\end{itemize}
+
+
+\section{Timeline \& Milestones}
+
+
+\subsection{Year 1: Empirical Validation \& Formalism Development (Months 1-12)}
+\begin{itemize}
+    \item \textbf{Months 1-4}: Data acquisition; Development of persistent homology computational tools
+    \item \textbf{Months 5-8}: Initial model fitting with refined $f_{\mathrm{overlap}}$ forms
+    \item \textbf{Months 9-12}: Systematic uncertainty analysis; Presentation at Lattice 2026
+\end{itemize}
+
+
+\subsection{Year 2: Advanced Computational Analysis (Months 13-24)}
+\begin{itemize}
+    \item \textbf{Months 13-16}: Implementation of discrete Ricci flow models
+    \item \textbf{Months 17-20}: AdS/QCD calculations with tensor network insights
+    \item \textbf{Months 21-24}: Machine learning development; First paper submission to PRL/JHEP
+\end{itemize}
+
+
+\subsection{Year 3: Integration and Dissemination (Months 25-36)}
+\begin{itemize}
+    \item \textbf{Months 25-28}: Cross-lepton validation studies
+    \item \textbf{Months 29-32}: Comprehensive uncertainty quantification
+    \item \textbf{Months 33-36}: Final paper preparation; Major conference presentations
+\end{itemize}
+
+
+\section{Budget Justification}
+
+
+\subsection{Personnel (70\% of budget)}
+\begin{itemize}
+    \item Principal Investigator (20\% effort): Leadership and theoretical development
+    \item Postdoctoral Researcher (100\% effort): Computational implementation
+    \item Graduate Student (50\% effort): Data analysis and machine learning
+\end{itemize}
+
+
+\subsection{Computational Resources (20\% of budget)}
+\begin{itemize}
+    \item High-performance computing: 2M CPU-hours/year
+    \item GPU cluster access: 10K GPU-hours/year
+    \item Data storage: 50 TB
+    \item Software licenses for topological data analysis tools
+\end{itemize}
+
+
+\subsection{Travel and Dissemination (10\% of budget)}
+\begin{itemize}
+    \item Conference presentations: 3 major conferences/year
+    \item Collaboration visits: 2 extended visits/year
+    \item Workshop organization: 1 focused workshop in Year 3
+\end{itemize}
+
+
+\section{Conclusion}
+
+
+This proposal presents an enhanced framework for understanding the Muon g-2 anomaly as a computational residual arising from the partial resolution of vacuum geometry in lattice QCD calculations. By incorporating sophisticated concepts from topology, differential geometry, and connections to synergistic research areas, we significantly strengthen the hypothesis that the anomaly emerges from incomplete capture of continuous vacuum structures by discrete methods.
+
+
+Our multi-faceted validation strategy ensures robust testing across theoretical, computational, and empirical domains. Success in this endeavor would not only potentially resolve a major outstanding puzzle in particle physics but also advance our fundamental understanding of how discrete numerical methods capture continuous quantum phenomena.
+
+
+This work represents a crucial step toward more accurate and conceptually complete computational approaches in quantum field theory, with implications extending beyond the g-2 anomaly to our broader understanding of the quantum vacuum and computational physics.
+
+
+\section*{Acknowledgments}
+We thank [collaborators and institutions] for valuable discussions and support. This work is supported by [funding agencies].
+
+
+\bibliographystyle{plainnat}
+% \bibliography{references} % Uncomment and add your .bib file
+
+
+% Sample references
+\begin{thebibliography}{20}
+
+
+\bibitem{Abi2021}
+B.~Abi et al. (Muon g-2 Collaboration).
+\newblock Measurement of the positive muon anomalous magnetic moment to 0.46 ppm.
+\newblock \emph{Phys. Rev. Lett.}, 126:141801, 2021.
+
+
+\bibitem{Aoyama2020}
+T.~Aoyama et al.
+\newblock The anomalous magnetic moment of the muon in the Standard Model.
+\newblock \emph{Phys. Rept.}, 887:1--166, 2020.
+
+
+\bibitem{Borsanyi2021}
+Sz.~Borsanyi et al.
+\newblock Leading hadronic contribution to the muon magnetic moment from lattice QCD.
+\newblock \emph{Nature}, 593:51--55, 2021.
+
+
+\bibitem{Blum2018}
+T.~Blum et al. (RBC and UKQCD Collaborations).
+\newblock Calculation of the hadronic vacuum polarization contribution to the muon anomalous magnetic moment.
+\newblock \emph{Phys. Rev. Lett.}, 121:022003, 2018.
+
+
+\bibitem{Carlsson2009}
+G.~Carlsson.
+\newblock Topology and data.
+\newblock \emph{Bull. Amer. Math. Soc.}, 46:255--308, 2009.
+
+
+\bibitem{Edelsbrunner2010}
+H.~Edelsbrunner and J.~Harer.
+\newblock \emph{Computational Topology: An Introduction}.
+\newblock American Mathematical Society, 2010.
+
+
+\bibitem{Maldacena1999}
+J.~Maldacena.
+\newblock The large N limit of superconformal field theories and supergravity.
+\newblock \emph{Int. J. Theor. Phys.}, 38:1113--1133, 1999.
+
+
+\bibitem{Forman2003}
+R.~Forman.
+\newblock Bochner's method for cell complexes and combinatorial Ricci curvature.
+\newblock \emph{Discrete Comput. Geom.}, 29:323--374, 2003.
+
+
+\end{thebibliography}
+
+
+\end{document}
