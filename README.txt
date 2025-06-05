@@ -25,7 +25,7 @@ Contact: mle1ravens@gmail.com
 
 # TSR Framework
 
-![TSR Banner](README_IMAGE.jpg)
+![Oh-Em-Gee-muon-U2 Banner](README_IMAGE.jpg)
 
 This repository contains research and simulation materials for the **TSR (Tension-Shape-Resonance) theoretical frameworks**, a theoretical structure proposed by $dadRaps.
 
