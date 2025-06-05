@@ -20,5 +20,5 @@ Use any LaTeX environment that supports:
 
 Alternatively, upload Muon_g2_Topology_Proposal_v1.tex to Overleaf or use pdflatex.
 
-Author: [Your Name]
-Contact: [Your Email]
+Author: $dadRaps
+Contact: mle1ravens@gmail.com
